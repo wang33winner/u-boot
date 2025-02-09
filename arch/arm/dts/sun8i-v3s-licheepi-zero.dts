@@ -99,3 +99,11 @@
 	usb0_id_det-gpios = <&pio 5 6 GPIO_ACTIVE_HIGH>;
 	status = "okay";
 };
+&spi0 {
+	status = "okay";
+	spidev@0x00{
+		compatible = "spidev";
+		spi-max-frequency = <10000000>;
+		reg = <0>;
+	};
+};
