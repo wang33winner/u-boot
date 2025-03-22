@@ -313,6 +313,7 @@ config MACH_SUN8I_V3S
 	select CPU_V7_HAS_NONSEC
 	select CPU_V7_HAS_VIRT
 	select ARCH_SUPPORT_PSCI
+	select SUNXI_DE2
 	select SUNXI_GEN_SUN6I
 	select SUNXI_DRAM_DW
 	select SUNXI_DRAM_DW_16BIT
@@ -808,7 +809,6 @@ config VIDEO_SUNXI
 	depends on !MACH_SUN8I_A83T
 	depends on !MACH_SUNXI_H3_H5
 	depends on !MACH_SUN8I_R40
-	depends on !MACH_SUN8I_V3S
 	depends on !MACH_SUN9I
 	depends on !MACH_SUN50I
 	depends on !SUN50I_GEN_H6

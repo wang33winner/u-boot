@@ -377,7 +377,8 @@ U_BOOT_DRIVER(sunxi_dw_hdmi) = {
 	.probe	= sunxi_dw_hdmi_probe,
 	.priv_auto	= sizeof(struct sunxi_dw_hdmi_priv),
 };
-
+#ifndef CONFIG_MACH_SUN8I_V3S
 U_BOOT_DRVINFO(sunxi_dw_hdmi) = {
 	.name = "sunxi_dw_hdmi"
 };
+#endif

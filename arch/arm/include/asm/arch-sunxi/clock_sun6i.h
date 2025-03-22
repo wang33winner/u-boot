@@ -334,7 +334,7 @@ struct sunxi_ccm_reg {
 #define AHB_GATE_OFFSET_DE		12
 #define AHB_GATE_OFFSET_HDMI		11
 #define AHB_GATE_OFFSET_TVE		9
-#ifndef CONFIG_SUNXI_DE2
+#if !defined(CONFIG_SUNXI_DE2) || defined(CONFIG_MACH_SUN8I_V3S)
 #define AHB_GATE_OFFSET_LCD1		5
 #define AHB_GATE_OFFSET_LCD0		4
 #else
@@ -481,7 +481,7 @@ struct sunxi_ccm_reg {
 #define AHB_RESET_OFFSET_HDMI		11
 #define AHB_RESET_OFFSET_HDMI2		10
 #define AHB_RESET_OFFSET_TVE		9
-#ifndef CONFIG_SUNXI_DE2
+#if !defined(CONFIG_SUNXI_DE2) || defined(CONFIG_MACH_SUN8I_V3S)
 #define AHB_RESET_OFFSET_LCD1		5
 #define AHB_RESET_OFFSET_LCD0		4
 #else
@@ -516,6 +516,7 @@ struct sunxi_ccm_reg {
 #define CCM_DE_CTRL_PLL8		(3 << 24)
 #define CCM_DE_CTRL_PLL9		(4 << 24)
 #define CCM_DE_CTRL_PLL10		(5 << 24)
+#define CCM_DE2_CTRL_PLL3_V3S	(0 << 24)
 #define CCM_DE_CTRL_GATE		(1 << 31)
 
 /* CCM bits common to all Display Engine 2.0 clock ctrl regs */

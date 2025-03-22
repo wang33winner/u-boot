@@ -465,7 +465,7 @@ static void sunxi_composer_init(void)
 #ifndef CONFIG_MACH_SUN4I /* On sun4i the frontend does the dma */
 	setbits_le32(&ccm->dram_clk_gate, 1 << CCM_DRAM_GATE_OFFSET_DE_BE0);
 #endif
-	clock_set_de_mod_clock(&ccm->be0_clk_cfg, 300000000);
+	clock_set_de_mod_clock(&ccm->de_clk_cfg, 300000000);
 
 	/* Engine bug, clear registers after reset */
 	for (i = 0x0800; i < 0x1000; i += 4)
@@ -1271,7 +1271,7 @@ U_BOOT_DRVINFO(sunxi_de) = {
 /*
  * Simplefb support.
  */
-#if defined(CONFIG_OF_BOARD_SETUP) && defined(CONFIG_VIDEO_DT_SIMPLEFB)
+#if defined(CONFIG_OF_BOARD_SETUP) && defined(CONFIG_VIDEO_DT_SIMPLEFB) && !defined(CONFIG_SUNXI_DE2)
 int sunxi_simplefb_setup(void *blob)
 {
 	struct sunxi_display_priv *sunxi_display;
